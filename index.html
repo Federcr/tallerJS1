@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Menú Principal</title>
+  <script src="javascript/funciones.js"></script>
+</head>
+<body>
+  <script>
+    var header1 = crearNodoConTexto('h1', 'Bienvenido al sitio de Deadpool');
+
+    var paragraph1 = crearNodoConTexto('p', 'Explora las siguientes páginas para conocer más sobre Deadpool y sus frases memorables.');
+
+    var header2 = crearNodoConTexto('h2', 'Menú de Navegación');
+
+    var unorderedList = crearNodo('ul');
+    var listItem1 = crearNodoConTexto('li', "");
+    var link1 = crearNodoConTexto('a', 'Personajes principales');
+    link1.href = 'html/ejercicio1.html';
+    adicionarNodoAContenedor(link1, listItem1);
+    var listItem2 = crearNodoConTexto('li', '');
+    var link2 = crearNodoConTexto('a', 'Frases memorabeles');
+    link2.href = 'html/ejercicio2.html';
+    adicionarNodoAContenedor(link2, listItem2);
+
+    var subHeader = crearNodoConTexto('h2', '¿Quién es Deadpool?');
+    var paragraph2 = crearNodoConTexto('p', 'Deadpool, tambien conocido como ');
+    var strongText = crearNodoConTexto('strong', 'Wade Wilson');
+    var finalText = document.createTextNode(', es un anti-héroe de Marvel conocido por su humor sarcástico y sus habilidades de combate.');
+    adicionarNodoAContenedor(strongText, paragraph2);
+    paragraph2.appendChild(finalText);
+    var image = crearImagen('material/imagen1.jpg', 'Deadpool');
+    image.style.width = '320px';
+
+    adicionarNodoAContenedor(listItem1, unorderedList);
+    adicionarNodoAContenedor(listItem2, unorderedList);
+
+    adicionarNodoABody(header1);
+    adicionarNodoABody(paragraph1);
+    adicionarNodoABody(header2);
+    adicionarNodoABody(unorderedList);
+    adicionarNodoABody(subHeader);
+    adicionarNodoABody(paragraph2);
+    adicionarNodoABody(image);
+
+  </script>
+</body>
+</html>

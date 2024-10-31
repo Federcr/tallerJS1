@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Personajes principales</title>
+
+</head>
+<body>
+  <script>
+
+function crearNodoConTexto(tag, texto) {
+  const nodo = document.createElement(tag);
+  nodo.textContent = texto;
+  return nodo;
+}
+
+function crearImagen(src, alt) {
+  const img = document.createElement('img');
+  img.src = src;
+  img.alt = alt;
+  return img;
+}
+
+function adicionarNodoABody(nodo) {
+  document.body.appendChild(nodo);
+}
+
+const titulo = crearNodoConTexto('h1', 'Personajes principales de Deadpool');
+
+const subtituloDeadpool = crearNodoConTexto('h2', 'Deadpool (Wade Wilson)');
+const parrafoDeadpool = crearNodoConTexto('p', '');
+parrafoDeadpool.appendChild(document.createTextNode('Deadpool, también conocido como '));
+const strongDeadpool = crearNodoConTexto('strong', 'Wade Wilson');
+parrafoDeadpool.appendChild(strongDeadpool);
+parrafoDeadpool.appendChild(document.createTextNode(', es el protagonista de la película. es un mercenario con un sentido del humor único y habilidades de combate excepcionales.'));
+const imagenDeadpool = crearImagen('../material/imagen1.jpg', 'Deadpool');
+imagenDeadpool.style.width = '220px';
+
+const subtituloVanessa = crearNodoConTexto('h2', 'Vanessa');
+const parrafoVanessa = crearNodoConTexto('p', '');
+parrafoVanessa.appendChild(document.createTextNode(''));
+const emVanessa = crearNodoConTexto('em', 'Vanessa Carlysle ');
+parrafoVanessa.appendChild(emVanessa);
+parrafoVanessa.appendChild(document.createTextNode('es la novia de Wade Wilson. Es una figura clave en la vida de Deadpool y su '));
+const emMotivacionVanessa = crearNodoConTexto('em', 'motivación');
+parrafoVanessa.appendChild(emMotivacionVanessa);
+parrafoVanessa.appendChild(document.createTextNode(' principal en la historia.'));
+const imagenVanessa = crearImagen('../material/imagen2.jpg', 'Vanessa');
+imagenVanessa.style.width = '220px';
+
+const subtituloColossus = crearNodoConTexto('h2', 'Colossus');
+const parrafoColossus = crearNodoConTexto('p', 'Colossus, también conocido como ');
+const abbrColossus = crearNodoConTexto('abbr', 'Coloso');
+abbrColossus.setAttribute('title', 'Colossus');
+parrafoColossus.appendChild(abbrColossus);
+parrafoColossus.appendChild(document.createTextNode('. es un miembro de los X-Men que intenta guiar a Deadpool hacia un camino más heroico.'));
+const imagenColossus = crearImagen('../material/imagen3.webp', 'Colossus');
+imagenColossus.style.width = '220px';
+
+const parrafoFinal = crearNodoConTexto('p', 'Estos son solo algunos de los personajes memorables de la película ');
+const emDeadpool = crearNodoConTexto('em', 'Deadpool');
+parrafoFinal.appendChild(emDeadpool);
+parrafoFinal.appendChild(document.createTextNode('.'));
+
+adicionarNodoABody(titulo);
+adicionarNodoABody(subtituloDeadpool);
+adicionarNodoABody(parrafoDeadpool);
+adicionarNodoABody(imagenDeadpool);
+adicionarNodoABody(subtituloVanessa);
+adicionarNodoABody(parrafoVanessa);
+adicionarNodoABody(imagenVanessa);
+adicionarNodoABody(subtituloColossus);
+adicionarNodoABody(parrafoColossus);
+adicionarNodoABody(imagenColossus);
+adicionarNodoABody(parrafoFinal);
+
+  </script>
+</body>
+</html>

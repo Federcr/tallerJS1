@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+
+function crearNodoConTexto(tipo, texto) {
+    var nodo = document.createElement(tipo);
+    var nodoTexto = document.createTextNode(texto);
+    nodo.appendChild(nodoTexto);
+    return nodo;
+  }
+
+  function crearNodo(tipo) {
+    return document.createElement(tipo);
+  }
+
+  function adicionarNodoAContenedor(nodo, contenedor) {
+    contenedor.appendChild(nodo);
+  }
+
+  function adicionarNodoABody(nodo) {
+    document.body.appendChild(nodo);
+  }
+
+  function crearVideo(src, textoAlternativo) {
+    var video = document.createElement('video');
+    video.setAttribute('controls', 'controls');
+    var fuente = document.createElement('source');
+    fuente.setAttribute('src', src);
+    fuente.setAttribute('type', 'video/mp4');
+    video.appendChild(fuente);
+    video.appendChild(document.createTextNode(textoAlternativo));
+    return video;
+  }
+
+    tituloPrincipal = crearNodoConTexto('h1', 'Frases memorables de Deadpool');
+
+    parrafoIntro = crearNodoConTexto('p', 'Deadpool es conocido por su ingenio rápido y su sentido del humor único. Aquí hay algunas de sus frases más memorables:');
+    subtituloCitas = crearNodoConTexto('h2', 'Citas Famosas');
+    
+    listaCitas = crearNodo('ul');
+    cita1 = crearNodoConTexto('li', '"Maximum effort!"');
+    cita2 = crearNodoConTexto('li', `'"I'm about to do you what Limp bizkit did to music in the late '90s."`);
+    cita3 = crearNodoConTexto('li', `"You're probably thinking, ‘This was a superhero movie but that guy in the suit just turned that other guy into a kebab!’"`);
+
+    parrafoNota = crearNodo('p');
+    notaImportante = crearNodoConTexto('strong', 'Nota:');
+    textoNotaImportante = document.createTextNode(' Cada una de estas frases captura perfectamente el espíritu sarcástico y subversivo de Deadpool.');
+
+    adicionarNodoAContenedor(notaImportante, parrafoNota);
+    adicionarNodoAContenedor(textoNotaImportante, parrafoNota);
+
+    subtituloVideo = crearNodoConTexto('h2', 'Video de las Mejores Escenas');
+
+    videoDeadpool = crearVideo('../material/videoplayback.mp4', 'Deadpool Mejores Escenas');
+
+
+    adicionarNodoAContenedor(cita1, listaCitas);
+    adicionarNodoAContenedor(cita2, listaCitas);
+    adicionarNodoAContenedor(cita3, listaCitas);
+
+    adicionarNodoABody(tituloPrincipal);
+    adicionarNodoABody(parrafoIntro);
+    adicionarNodoABody(subtituloCitas);
+    adicionarNodoABody(listaCitas);
+    adicionarNodoABody(parrafoNota);
+    adicionarNodoABody(subtituloVideo);
+    adicionarNodoABody(videoDeadpool);
+
+
+
+  </script>
+</body>
+</html>
